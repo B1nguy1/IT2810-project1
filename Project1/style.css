@@ -1,0 +1,190 @@
+body{
+    margin:10px;
+    color:#000000;
+    font-size:18px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:#FFF8E7;
+    line-height: 1.5;
+}
+
+h1{
+    text-align:center;
+}
+
+.kunstner-info{
+    display:flex;
+    padding: 0 10px;
+    margin:10px;
+    margin-bottom:10px;
+    background-color:#C1FFD7;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-radius: 19px;
+}
+
+.flex-container{
+    background-color:white;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-bottom:10px;
+    margin:10px;
+    border-radius: 19px;
+}
+
+.svg{
+    width:550px;
+    height:500px;
+    background-color:#C1FDFF;
+    text-align: center;
+    border-radius:19px;
+    align-items: center;
+}
+
+.canvas-class{
+    width:550px;
+    height:500px;
+    background-color: #F3C1FF;
+    text-align: center;
+    border-radius:19px;
+}
+
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#doc-button{
+    font-size:20px;
+    width:200px;
+    height:50px;
+    border-radius: 15px;
+    padding: 0 10px;
+    margin:5px;
+    background:skyblue;
+    color:white;
+}
+
+#doc{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    background-color:white;
+    border-radius:19px;
+    padding:10px;
+    margin:10px;
+}
+
+footer{
+    background-color: #ff0000;
+    color:white;
+    margin:auto;
+}
+
+#svg-img,#myCanvas{
+    background:#f0f0f0;
+}
+
+#svg-img:hover #sun-svg{
+      fill:rgb(255,140,0);
+      animation-name: moveSun;
+      animation-duration: 10s;
+
+}
+
+#svg-img:hover{
+    animation-name:changeBackground;
+    animation-duration: 7s;
+}
+
+#svg-img:hover #circle1{
+    transform: translate(90px,0px);
+    transition: all .7s linear;
+}
+
+#svg-img:hover #circle2{
+    transform: translate(90px,0px);
+    transition: all .7s linear;
+}
+
+#svg-img:hover #circle3{
+    transform: translate(90px,0px);
+    transition: all .7s linear;
+}
+
+#svg-img:hover #circle4{
+    transform: translate(90px,0px);
+    transition: all .7s linear;
+}
+
+#svg-img:hover #circle5{
+    transform: translate(90px,0px);
+    transition: all .7s linear;
+}
+
+#circle1,
+#circle2,
+#circle3,
+#circle4,
+#circle5{
+    opacity: 1;
+}
+
+.removeCircles,.removeBird{
+    opacity: 0;
+}
+
+@keyframes changeBackground{
+    0%{
+        background:"#f0f0f0";
+    }
+    25%
+    {
+        background-color:#ffb90f;
+    }
+    50%{
+        background-color:#ffd700;
+    }
+    100%{
+        background-color:black;
+    }
+}
+
+#moon{
+    opacity:0;
+}
+
+#myCanvas:hover{
+    animation-name: changeBackground;
+    animation-duration: 7s;
+}
+
+#svg-img:hover #moon{
+    opacity:0;
+    animation: night 0.8s 4s forwards;
+}
+
+.bird{
+    background:rgb(138,138,138);
+}
+
+@keyframes moveSun{
+    0%{
+        cx:330px;
+        cy:90px;
+        background-color:#f0f0f0;
+    }
+    to{
+        cx:330px;
+        cy:500px;
+    }
+}
+
+@keyframes night{
+    100%{
+        opacity:1;
+    }
+}

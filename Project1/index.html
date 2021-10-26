@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>First IT2810-project</title>
+</head>
+
+<body>
+  <h1> Første kunstverk med digital verktøy </h1>
+      <div class="kunstner-info">
+        <h2>Informasjon om kunstneren og kunstverk</h2>
+        <p>Denne kunstneren har alltid likt å tegne og har hatt et ønske å tegne tegningene digitalt. 
+          Han har kun tegnet på papir med fargeblyanter, men det har vært tidskrevende. 
+          Derfor ser han etter en løsning på dette samtidig som han kan gjøre animasjoner. 
+          Etter forslag fra venner om SVG og Canvas har han derfor prøvd ut disse to forskjellige verktøy 
+          for å finne ut hvilket som passer best for ham.
+          <br>
+          Dette kunstverket ble han inspirert fra en sommerkveld han kjedet seg. Det ble først tegnet for hånd,
+          og nå er det digitalisert. 
+        </p>
+      </div>  
+    
+    
+    <div class="flex-container">
+    <div class="svg">
+        <h3> SVG </h3>
+        <svg id="svg-img" width= "400" height="400" style="border: 1px solid black" >
+          <defs>
+            <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="45%" fy="45%">
+              <stop offset="0%" style="stop-color:rgb(255,140,0);stop-opacity:0" />
+              <stop offset="100%" style="stop-color:rgb(255,215,0);stop-opacity:1" />
+            </radialGradient>
+          </defs>
+
+          <circle id="sun-svg" cx="330" cy="90" r="45" stroke-width="4" fill="url(#grad1)" />
+
+          <rect id="grass" width="400" x="0" y="300" height="100" style="fill:#59A608" />
+          <rect id="brun-tre" fill="#8B572A" x="70" y="190" width="70" height="150"></rect>
+          
+          <g id="house">
+            <rect id="houseBase" x="240" y="220" width="120" height="120" fill="red" />
+            <rect id="door" x="285" y="280" width="30" height="60" fill="brown" />
+            <circle id="doorknob" cx="310" cy="310" r="5" fill="gold" stroke="black" />
+            <rect id="left-window" x="250" y="280" width="30" height="30" fill="skyblue" />
+            <rect id="right-window" x="320" y="280" width="30" height="30" fill="skyblue" />
+            <polyline id="roof" points="240,220 300,150 360,220 240,220" stroke="black" fill="slategray"/>
+          </g>
+
+          
+          <g id="cloud">
+            <circle id="circle1" cx="180" cy="80" r="20" fill="white" onmouseenter="evt.target.setAttribute('r', '16');"  onmouseleave="evt.target.setAttribute('r', '20');"/>
+            <circle id ="circle2" cx="200" cy="70" r="20" fill="white" onmouseenter="evt.target.setAttribute('r', '30');"  onmouseleave="evt.target.setAttribute('r', '20');"/>
+            <circle id="circle3" cx="210" cy="80" r="20" fill="white" onmouseenter="evt.target.setAttribute('r', '10');"  onmouseleave="evt.target.setAttribute('r', '20');" />
+            <circle id="circle4" cx="235" cy="70" r="20" fill="white" onmouseenter="evt.target.setAttribute('r', '25');"  onmouseleave="evt.target.setAttribute('r', '20');"/>
+            <circle id="circle5" cx="240" cy="80" r="20" fill="white" onmouseenter="evt.target.setAttribute('r', '7');"  onmouseleave="evt.target.setAttribute('r', '20');"/>
+          </g>
+          
+          <circle cx="65" cy="165" r="40" stroke-width="3" fill="green" />
+          <circle cx="120" cy="170" r="50" stroke-width="3" fill="green" />
+          <circle cx="100" cy="130" r="50" stroke-width="3" fill="green" />
+          <circle cx="160" cy="125" r="50" stroke-width="3" fill="green" />
+
+        <g id="bird" fill="rgb(138,138,138)">
+          <polyline id="bird-p" points="50,30 95,80 145,30 95,55 50,30" />
+        </g>
+
+        <g id="moon">
+          <path d="M100 30A40 40 0 1 0 100 70 30 30 0 1 1 100 30z" stroke="yellow" stroke-width="1" fill="yellow"/>
+        </g>
+        </svg>
+      </div>
+
+      <div class="canvas-class">
+        <h3> Canvas </h3>
+        <canvas id="myCanvas" width= "400" height="400" style="border: 1px solid black" >
+        </canvas>
+      </div>
+    </div>
+      
+    <div class="buttons">
+        <button type="button" id="doc-button">
+          Se dokumentasjon
+        </button>
+      </div>
+
+      <div id="doc">
+        <h1>Dokumentasjon av prosjektet</h1>
+        <h3> Interaktivitet</h3>
+        <p> Interaktivitet skjer når det holdes over SVG-figuren og Canvas-figuren. For både Canvas og SVG vil det være en sol som beveger seg ned
+          som skal være solnedgang. Bakgrunnen vil endre seg til svart når sola har gått helt ned. På SVG-kunstverket vil skyene forsvinne ved museklikk
+          og det vil dukke opp igjen dersom man klikke på samme posisjon som de forsvant. For fuglen vil det fade ut dersom man klikker på musa og kommer ikke tilbake før man
+          refresher nettsiden. 
+        </p>
+        <h3>CSS Flexbox</h3>
+        <p>Ettersom CSS Flexbox er blitt kjent fra tidligere av ønsket jeg å friske opp kunnskapen ved å benytte seg av dette 
+          for å strukturere elementer på nettsiden og for å få til responsiv webside. Elementer (SVG og Canvas) som skulle bli plassert ved siden av hverandre horisontalt 
+          i samme beholder som er .flex-container. Ved å ta i bruk egenskaper "display:flex" og "flex-direction:row" førte det til at jeg fikk ønsket layout som var horisontalt.
+          For andre elementer har det blitt brukt column som flex-direction for å få de plassert vertikalt. 
+        </p>
+
+        <h3>SVG og HTML Canvas</h3>
+        <p>Figuren til venstre er tegnet i SVG, mens høyre figuren er blitt tegnet i canvas ved hjelp av JavaScript.
+           SVG er blitt tegnet i HTML-filen ved hjelp av formelementer som er forhåndsfefinert slik som rect,circle og polyline.
+           Koordinatene for å plassere de forskjellige objektene i SVG blir hardkodet mens animering og eventhandlinger for de forskjellige
+           objektene blir gjort i style.css og jsjquery.js. 
+
+           Elementer i canvas, derimot, blir tegnet ved hjelp av paths,.arc() eller .fillRect(). Man bruker gjerne .arc() for sirkler. 
+           og .fillRect() for rektangler. Etter å ha gjort interaktivitet viste det seg at det var vanskelig å få til nøyaktig det samme i canvas. 
+           Det viste seg vanskeligere med interaksjon ettersom det ikke var mulig til å bruke IDer på forskjellige objekter. Det er kun et canvas objekt 
+           noe som gjør at hvis en tar i bruk "hover" vil det være for hele tegningen. Animasjon i canvas fungerer ved at det hele tiden fjernes elementer fra canvas
+          og deretter blir tegnet opp på nytt. 
+        </p>
+
+        <h3> Jquery </h3>
+        <p>jQuery er et javascript bibliotek som gjør det enklere å hente ut forskjellige objekter basert på deres ID
+            for å gjøre handlinger på disse.
+            Blant annet har jeg i jQuery brukt "id" til fuglen (#bird og #bird-p) for å fjerne fuglen
+          når man tar i bruk klikk-event for SVG. For Canvas har ikke dette vært helt mulig da figurene ikke har en ID
+          og at de ikke blir sett på som individuelle og forskjellige objekter. Jeg har likevel brukt hover funksjon for canvas.
+          Denne funksjonen ble brukt til å kunne bytte bakgrunnsfarge ved hover. Dette ble gjort ved at jeg måtte hente ut
+          canvas-objektet som er det eneste objektet. jQuery er også blitt benyttet for å implementere vis/skjul knapp for dokumentasjon. 
+        </p>
+        <h3>Cross-browser testing</h3>
+        <p>
+          Cross-browser testing er viktig i webutvikling ettersom forskjellige nettlesere har forskjellige oppførsel. 
+          Nettsiden har blitt testet i Google Chrome og Mozilla Firefox og all funksjonalitet fungerer som det skal. 
+          Testene har vært å sjekke om interaktivitet fungerer for både canvas og SVG og om nettsiden er responsiv når siden 
+          blir skalert. 
+        </p>
+        <h3>Informasjonskilder:</h3>
+        <ul>
+          <li>
+            <a class="text"
+            href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+            CSS Flexbox
+          </a>
+          </li>
+          <li>
+            <a class="text"
+            href="https://www.w3schools.com/graphics/svg_intro.asp">
+            Tutorial for SVG
+          </a>
+          </li>
+          <li>
+            <a class="text"
+            href=https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial>
+            Tutorial for canvas
+          </a>
+          </li>
+          <li>
+            <a class="text"
+            href=https://www.w3schools.com/jquery/>
+            Tutorial for jQuery
+          </a>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <p style="text-align: center">&copy; Kunstner1@example.no, 1.IT2810-project</p>
+      </footer>
+
+
+    <script src="canvas.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jsjquery.js"></script>
+</body>
+</html>
