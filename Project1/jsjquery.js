@@ -20,5 +20,4 @@ $("#bird").click(function(){
 
 $('#doc-button').click(() => {
     $("#doc").toggle();
-    console.log("Does this work tho!")
 })
