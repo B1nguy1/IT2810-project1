@@ -18,16 +18,7 @@ $("#bird").click(function(){
     $("#bird-p").fadeOut(2000);
 });
 
-$(document).ready(function(){
-    var toggleButton="on";
-    $(".buttons").click(function(){
-        if(toggleButton === "off"){
-            $("#doc").show();
-            toggleButton="on";
-        }
-        else{
-            $("#doc").hide();
-            toggleButton="off";
-        }
-    }  
-)});
+$('#doc-button').click(() => {
+    $("#doc").toggle();
+    console.log("Does this work tho!")
+})
