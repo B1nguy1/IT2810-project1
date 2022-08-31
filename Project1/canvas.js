@@ -3,8 +3,8 @@ var ctx = canvas.getContext("2d");
 let isHovering = false;
 let animation = null;
 
-const canvasWidth = 400,
-      canvasHeight = 400,
+const canvasWidth = ctx.canvas.clientWidth,
+      canvasHeight = ctx.canvas.clientHeight,
       twoPi = 2* Math.PI;
 
 const COLOR = {
