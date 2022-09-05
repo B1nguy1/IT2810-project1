@@ -19,5 +19,9 @@ $("#bird").click(function(){
 });
 
 $('#doc-button').click(() => {
-    $("#doc").toggle();
-})
+    $("#doc").toggle(() => {
+        $('#doc-button').text(function(i, text){
+            return text === "Skjul" ? "Se dokumentasjon" : "Skjul";
+        });
+    }); 
+});
